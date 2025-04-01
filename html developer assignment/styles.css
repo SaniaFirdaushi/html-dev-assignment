@@ -1,0 +1,1394 @@
+/* 540px	720px	960px	1140px */
+@import url("https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&display=swap");
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "RailBold";
+  src: url("./assets/fonts/NewRailAlphabet-Bold.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "RailLight";
+  src: url("./assets/fonts/NewRailAlphabet-Light.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "RailWhite";
+  src: url("./assets/fonts/NewRailAlphabet-White.otf") format("opentype");
+}
+
+:root {
+  --bg-color-primayr: #322d2d;
+  --bg-color-button: linear-gradient(
+    93.63deg,
+    #caa648 -0.61%,
+    #caa648 10.09%,
+    #d5b147 25.19%,
+    #e4c267 46.69%,
+    #e2c065 78.94%,
+    #dbb95e 90.77%,
+    #d0ae52 98.29%,
+    #c09f41 104.74%,
+    #bb9a3c 106.89%
+  );
+  --color-text-golden: linear-gradient(90deg, #9e6718 0%, #ffb545 100%);
+}
+
+body {
+  color: #322d2d;
+}
+
+/* Container CSS */
+
+.container {
+  max-width: 1400px;
+  margin: auto;
+}
+
+@media (max-width: 960px) {
+  .container {
+    margin: 0px 20px;
+  }
+}
+
+/*......................................*/
+
+/* Header Banner */
+
+.header-banner {
+  background-color: var(--bg-color-primayr);
+  color: #fff;
+  font-family: "RailLight", sans-serif;
+  text-transform: uppercase;
+  font-weight: 300;
+  font-size: 0.885rem;
+  padding: 16.18px;
+  text-align: center;
+  line-height: 16.18px;
+}
+
+@media (max-width: 480px) {
+  .header-banner {
+    font-size: 0.625rem;
+  }
+}
+
+/* ----------------------------------- */
+
+/* Navbar */
+
+.outer-section {
+  background: linear-gradient(
+    180deg,
+    rgba(243, 243, 243, 0.75) 0%,
+    rgba(184, 184, 184, 0.8) 59.38%,
+    rgba(243, 243, 243, 0.25) 100%
+  );
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 16px 0px;
+}
+
+.logo {
+  width: 179.4px;
+  height: 30.4px;
+}
+
+.menu-lists {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-width: 70%;
+}
+
+.menu-item {
+  list-style: none;
+  display: flex;
+  gap: 32.36px;
+  font-family: "RailLight", sans-serif;
+  font-weight: 300;
+  font-size: 1.011rem;
+  line-height: 150%;
+}
+
+.menu-item select {
+  border: 0;
+  font-family: "RailLight", sans-serif;
+  font-weight: 300;
+  font-size: 1.011rem;
+  line-height: 150%;
+  padding-right: 0;
+  margin-right: -5px;
+  cursor: pointer;
+}
+
+.menu-item li a {
+  text-decoration: none;
+  color: #000;
+}
+
+.header-button {
+  background: var(--bg-color-button);
+  padding: 12.14px 24.27px;
+  border-radius: 505.64px;
+  display: flex;
+  align-items: center;
+  gap: 29.33px;
+  cursor: pointer;
+}
+
+.header-button button {
+  font-family: "RailLight", sans-serif;
+  font-size: 1.138rem;
+  line-height: 16.18px;
+  border: 0;
+  background: transparent;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.search-container :nth-child(1) {
+  cursor: pointer;
+}
+
+.header-input {
+  display: none;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 16.18px;
+  width: 841px;
+  background-color: #d9d9d9;
+  border: 0;
+  border-radius: 25px;
+  padding: 12px 12px 12px 35px;
+  margin-right: 10px;
+}
+
+.header-input::placeholder {
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 16.18px;
+  color: black !important;
+}
+
+.sidebar {
+  display: none;
+}
+
+.hamburger span {
+  background-color: #000;
+  width: 30px;
+  height: 3px;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  cursor: pointer;
+}
+
+@media (max-width: 720px) {
+  .menu-lists {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .sidebar {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.25);
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 280px;
+    font-size: 1.25rem;
+  }
+
+  .sidebar .close-icon {
+    margin: 65px 0px 0px 20px;
+    border: 1px dashed #000;
+    border-radius: 50%;
+    padding: 5px;
+  }
+  .sidebar ul {
+    list-style: none;
+  }
+
+  .sidebar li a {
+    text-decoration: none;
+    color: #000;
+  }
+
+  .sidebar ul {
+    display: flex;
+    flex-direction: column;
+    margin-left: 30px;
+    justify-content: center;
+    height: 50%;
+    gap: 25px;
+  }
+
+  .sidebar li select {
+    border: 0;
+    font-family: "RailLight", sans-serif;
+    font-weight: 300;
+    font-size: 1.25rem;
+    line-height: 150%;
+    padding-right: 0;
+    cursor: pointer;
+    background: transparent;
+    margin-left: -5px;
+  }
+
+  .mobile-header-button {
+    background: var(--bg-color-button);
+    padding: 12.14px 24.27px;
+    border-radius: 505.64px;
+    display: flex;
+    align-items: center;
+    gap: 29.33px;
+    cursor: pointer;
+    width: 160px;
+    margin-left: 30px;
+  }
+  .mobile-header-button button {
+    font-family: "RailLight", sans-serif;
+    font-size: 0.875rem;
+    line-height: 16.18px;
+    border: 0;
+    background: transparent;
+  }
+}
+
+/* ----------------------------------- */
+
+/* Hero Section */
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-top: 60px;
+}
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.rating-bar {
+  background: linear-gradient(
+    90.05deg,
+    rgba(255, 255, 255, 0.36) 0.04%,
+    rgba(252, 252, 252, 0.12) 102.54%
+  );
+  font-size: 1rem;
+  font-weight: 300;
+  display: flex;
+  align-items: center;
+  line-height: 100%;
+  max-width: 520px;
+  border-radius: 20px;
+  gap: 8px;
+  font-family: "RailWhite", sans-serif;
+}
+
+.rating-img {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 14px;
+}
+
+.rating-img img {
+  height: 16px;
+  width: 16px;
+}
+
+.hero-left-heading {
+  font-size: 3.5rem;
+  font-weight: 300;
+  font-family: "RailLight";
+  color: #322d2d;
+  line-height: 112.00000000000001%;
+  line-height: -1.33px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.hero-text-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.first-text p:nth-child(1) {
+  font-size: 4.5rem;
+  font-weight: 700;
+  font-family: "RailBold", sans-serif;
+  background: var(--bg-color-button);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.first-text p:nth-child(2) {
+  font-family: "RailLight", sans-serif;
+  font-weight: 300;
+  font-size: 1.375rem;
+  line-height: 104%;
+  letter-spacing: 0px;
+}
+
+.second-text p:nth-child(1) {
+  font-size: 4.5rem;
+  font-weight: 700;
+  font-family: "RailBold", sans-serif;
+  background: var(--bg-color-button);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.second-text p:nth-child(2) {
+  font-family: "RailLight", sans-serif;
+  font-weight: 300;
+  font-size: 1.375rem;
+  line-height: 104%;
+  letter-spacing: 0px;
+}
+
+.third-text p:nth-child(1) {
+  font-size: 4.5rem;
+  font-weight: 700;
+  font-family: "RailBold", sans-serif;
+  background: var(--bg-color-button);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.third-text p:nth-child(2) {
+  font-family: "RailLight", sans-serif;
+  font-weight: 300;
+  font-size: 1.375rem;
+  line-height: 104%;
+  letter-spacing: 0px;
+}
+
+.inner-third-text {
+  font-size: 1.563rem;
+}
+
+.left-grid {
+  display: flex;
+  align-items: center;
+}
+
+.left-grid-button {
+  background: var(--bg-color-button);
+  padding: 12.14px 24.27px;
+  border-radius: 505.64px;
+  display: flex;
+  align-items: center;
+  gap: 29.33px;
+  cursor: pointer;
+  max-width: 180px;
+  margin-top: 20px;
+}
+
+.left-grid-button button {
+  font-family: "RailLight", sans-serif;
+  font-size: 1.138rem;
+  line-height: 16.18px;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.right-grid {
+  text-align: right;
+}
+
+.hero-banner-text {
+  display: flex;
+  justify-content: center;
+}
+
+.inner-div-banner-text {
+  border: 2px solid;
+  border-image: var(--bg-color-button) 1;
+  font-family: "RailLight", sans-serif;
+  font-weight: 300;
+  font-size: 2.25rem;
+  line-height: 100%;
+  letter-spacing: -2.02px;
+  text-transform: capitalize;
+  padding: 15px 120px;
+  margin-top: 80px;
+}
+
+/* ----------------------------------- */
+
+/* Element Section */
+
+.element-section {
+  margin-top: 120px;
+}
+
+.right-grid-golden-text {
+  font-family: "RailLight", sans-serif;
+  font-weight: 300;
+  font-size: 1.5rem;
+  line-height: 100%;
+  letter-spacing: 3.03px;
+  background: var(--color-text-golden);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 15px;
+}
+
+.right-grid-heading {
+  font-family: "RailLight", sans-serif;
+  font-weight: 300;
+  font-size: 2.25rem;
+  line-height: 100%;
+  letter-spacing: 0px;
+  color: #322d2d;
+  margin-bottom: 15px;
+}
+
+.right-grid-para {
+  font-family: "RailLight", sans-serif;
+  font-weight: 300;
+  font-size: 1.313rem;
+  line-height: 30px;
+  letter-spacing: 0px;
+  color: #322d2d;
+}
+
+.right-grid-para span {
+  font-weight: 700;
+}
+
+.right-grid-button {
+  max-width: 280px;
+}
+
+.right-grid-two {
+  display: flex;
+  align-items: center;
+  margin-left: 40px;
+}
+
+.guarantee-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
+
+.guarantee-container {
+  display: flex;
+  gap: 10px;
+}
+
+.guarantee-golden-text {
+  font-family: "RailLight", sans-serif;
+  font-weight: 300;
+  font-size: 1.063rem;
+  line-height: 100%;
+  letter-spacing: 2px;
+  background: var(--color-text-golden);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.guarantee-text p {
+  font-family: "RailLight", sans-serif;
+  font-weight: 300;
+  font-size: 1.25rem;
+  line-height: 22.99px;
+  letter-spacing: 0px;
+  color: #322d2d;
+}
+
+.guarantee-text :last-child {
+  font-family: "RailLight", sans-serif;
+  font-weight: 300;
+  font-size: 1rem;
+  line-height: 19.16px;
+  letter-spacing: 0px;
+  color: #666666;
+}
+
+/* ----------------------------------- */
+
+/* Action Sction */
+
+.action-section {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.action-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-top: 80px;
+}
+
+@media (max-width: 768px) { 
+  .action-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ----------------------------------- */
+
+/* Prodcut View Section */
+
+.product-grid {
+  display: grid;
+  grid-template-columns: 40% 60%;
+}
+
+@media (max-width: 768px) { 
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.product-left-grid img {
+  margin-top: 40px;
+}
+
+.product-gird-heading {
+  font-family: "RailLight", sans-serif;
+  font-weight: 300;
+  font-size: 2.25rem;
+  line-height: 112.01%;
+  letter-spacing: -1.33px;
+  color: #322d2d;
+  text-align: center;
+  margin-top: 100px;
+  margin-bottom: 30px;
+}
+
+.product-gird-heading :last-child {
+  font-family: "RailLight", sans-serif;
+  font-weight: 700;
+  font-size: 0.75rem;
+  line-height: 100%;
+  letter-spacing: 3.03px;
+  color: #322d2d;
+  margin-top: 12px;
+}
+
+.product-inner-grid {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 10px;
+}
+
+@media (max-width: 768px) { 
+  .product-inner-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.product-card {
+  width: 367px;
+  height: 199px;
+  border-radius: 17px;
+  padding: 20px 24px;
+  background-color: #fafaf8;
+  box-shadow: 0px 4px 4px 0px #00000040;
+}
+
+.card-content {
+  display: flex;
+  gap: 20px;
+}
+
+.card-text {
+  color: #666666;
+  font-family: "RailLight", sans-serif;
+  font-weight: 700;
+  font-size: 1.125rem;
+  line-height: 24.27px;
+  letter-spacing: 0px;
+}
+
+.card-text :last-child {
+  color: #666666;
+  font-family: "RailWhite", sans-serif;
+  font-weight: 300;
+  font-size: 1rem;
+  line-height: 20.23px;
+  letter-spacing: 0px;
+  margin-top: 10px;
+}
+
+.product-grid-button {
+  width: 180px;
+}
+/* ----------------------------------- */
+
+/* Subscription Section */
+
+.subscription-section {
+  margin-top: 60px;
+  position: relative;
+  display: inline-block;
+}
+
+.subscription-section img {
+  display: block;
+}
+
+.subscription-content {
+  position: absolute;
+  top: 60.83px;
+  left: 72.3px;
+  max-width: 553.3px;
+}
+
+.subscription-gold {
+  font-family: "Oxanium", sans-serif;
+  font-weight: 400;
+  font-size: 0.777rem;
+  line-height: 100%;
+  letter-spacing: 3.14px;
+  background: var(--color-text-golden);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.subscription-heading {
+  font-family: "RailLight", sans-serif;
+  font-weight: 300;
+  font-size: 2.589rem;
+  line-height: 100%;
+  letter-spacing: 0px;
+  color: #322d2d;
+  margin-top: 60px;
+}
+
+.subscription-heading span {
+  font-weight: 700;
+}
+
+.chips-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15.58px;
+  margin-top: 30px;
+}
+
+.chip {
+  font-family: "RailLight", sans-serif;
+  font-weight: 300;
+  font-size: 1.036rem;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: #322d2d;
+  background-color: #d6d5d5;
+  width: fit-content;
+  border-radius: 17.31px;
+  padding: 8.76px 15.58px 8.76px 15.58px;
+}
+
+.subscription-section-button {
+  gap: 0;
+  justify-content: space-between;
+  max-width: 271.63px;
+  margin-top: 60px;
+}
+/* ----------------------------------- */
+
+/* Using Alcalmi Section */
+
+.using-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-top: 60px;
+}
+
+@media (max-width: 768px) { 
+  .using-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.using-header-text {
+  font-family: "RailLight", sans-serif;
+  font-weight: 300;
+  font-size: 2.5rem;
+  line-height: 100%;
+  letter-spacing: 0px;
+}
+
+.using-para-text {
+  font-family: "RailLight", sans-serif;
+  font-weight: 300;
+  font-size: 1.25rem;
+  line-height: 24.27px;
+  letter-spacing: 0px;
+  color: #666666;
+  margin-bottom: 30px;
+}
+
+.step {
+  font-family: "RailLight", sans-serif;
+  font-weight: 300;
+  font-size: 72.94px;
+  line-height: 94.56px;
+  letter-spacing: 0px;
+  opacity: 20%;
+}
+
+.step-details-heading {
+  font-family: "RailLight", sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24.27px;
+  letter-spacing: 0px;
+  background: var(--color-text-golden);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.step-details-para {
+  font-family: "RailLight", sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 20.23px;
+  letter-spacing: 0px;
+  color: #666666;
+}
+
+.using-step-container {
+  display: flex;
+  align-items: center;
+  gap: 55px;
+}
+
+.step-one {
+  margin-left: 8px;
+}
+
+.step-one-detail {
+  margin-left: 10px;
+}
+
+.using-header-text-two {
+  margin-top: 7px;
+  margin-bottom: 20px;
+}
+
+.right-using-grid {
+  text-align: right;
+  margin-right: 50px;
+}
+
+.using-section-button {
+  max-width: 370px;
+  margin-top: 60px;
+}
+
+.using-background-section {
+  background: url(./assets/images/section-bg.png);
+  height: 201.24px;
+  margin-top: 60px;
+}
+
+.using-background-text {
+  font-family: "RailLight", sans-serif;
+  font-weight: 700;
+  font-size: 2.5rem;
+  line-height: 100%;
+  letter-spacing: 0px;
+  color: #fff;
+}
+
+.using-background-text :last-child {
+  font-family: "RailWhite", sans-serif;
+  font-weight: 300;
+  font-size: 1rem;
+  line-height: 100%;
+  letter-spacing: 0px;
+  margin-top: 20px;
+}
+
+.inner-using-background {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  max-width: 1119.86px;
+  margin: auto;
+  justify-content: space-between;
+}
+/* ----------------------------------- */
+
+/* Choice Section */
+
+.choice-section {
+  margin-top: 30px;
+  margin-bottom: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.choice-heading {
+  font-weight: 300;
+  font-size: 2.5rem;
+  line-height: 100%;
+  letter-spacing: 0px;
+  text-align: center;
+}
+
+.choice-heading p:nth-child(n + 2) {
+  font-family: "RailLight", sans-serif;
+  font-weight: 300;
+  font-size: 2.528rem;
+  line-height: 100%;
+  letter-spacing: 0px;
+  text-align: center;
+}
+
+.choice-heading p:first-child {
+  margin-bottom: 50px;
+}
+
+.choice-heading :last-child {
+  margin-top: 10px;
+}
+
+th p {
+  font-family: "RailLight", sans-serif;
+  font-weight: 300;
+  font-size: 0.75rem;
+  line-height: 19.16px;
+  letter-spacing: 0px;
+  text-align: center;
+  color: #666666;
+}
+
+td {
+  font-family: "RailLight", sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 22.99px;
+  letter-spacing: 0px;
+  color: #666666;
+}
+
+.choice-table {
+  width: 950.14px;
+  border-collapse: collapse;
+  text-align: center;
+  margin: auto;
+  margin-top: 60px;
+}
+
+.choice-table-heading {
+  font-size: 1rem;
+  font-family: "RailLight", sans-serif;
+  font-weight: 700;
+  line-height: 22.99px;
+  letter-spacing: 0px;
+}
+
+.choice-table th,
+.choice-table td {
+  padding: 8px;
+}
+
+.choice-table tr:not(:first-child) td {
+  border-top: 1px solid #ddd;
+}
+
+.choice-table tr th:first-child,
+.choice-table tr td:first-child {
+  text-align: left;
+}
+
+.choice-table th:nth-child(2),
+.choice-table td:nth-child(2) {
+  background-color: #f0eee6;
+}
+
+.choice-table th:nth-child(2) {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.choice-table tr:last-child td:nth-child(2) {
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.choice-section-button {
+  max-width: 230px;
+  margin-top: 80px;
+}
+
+/* ----------------------------------- */
+
+/* Founder Section */
+
+.founder-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.founder-button {
+  width: 199.24px;
+}
+
+.founder-left-text {
+  font-family: "RailLight", sans-serif;
+  font-weight: 300;
+  font-size: 2.528rem;
+  line-height: 100%;
+  letter-spacing: 0px;
+  min-width: 421.35px;
+}
+
+.founder-right-text {
+  font-family: "RailWhite", sans-serif;
+  font-weight: 300;
+  font-size: 1.25rem;
+  line-height: 100%;
+  letter-spacing: 0px;
+  max-width: 665px;
+  margin-right: 40px;
+}
+
+.founder-text {
+  display: flex;
+  justify-content: space-between;
+  gap: 195px;
+  margin-top: 30px;
+}
+
+/* ----------------------------------- */
+
+/* Testimonial */
+
+.testimonial {
+  background-color: #f0efeb;
+  margin-top: 70px;
+}
+
+.testimonial-inner {
+  padding-top: 50px;
+  padding-bottom: 70px;
+}
+
+.testimonial-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.testimonial-heading-text :first-child {
+  font-family: "RailLight", sans-serif;
+  font-weight: 300;
+  font-size: 2.5rem;
+  line-height: 100%;
+  letter-spacing: 0px;
+}
+
+.testimonial-heading-text :last-child {
+  font-family: "RailLight", sans-serif;
+  font-weight: 300;
+  font-size: 1.25rem;
+  line-height: 150%;
+  letter-spacing: 0%;
+  margin-top: 10px;
+  margin-bottom: 25px;
+}
+
+.testimonial-heading-buttons :last-child {
+  margin-left: 10px;
+}
+
+.testimonial-card {
+  width: 421.18px;
+  height: 285px;
+  background-color: #fcfcfc;
+  border-radius: 12.14px;
+  padding: 30px;
+}
+
+.testi-card-text {
+  font-family: "RailLight", sans-serif;
+  font-weight: 300;
+  font-size: 1rem;
+  line-height: 150%;
+  letter-spacing: 0%;
+  margin-top: 25px;
+}
+
+.testi-profile {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.testi-profile-details {
+  font-family: "RailLight", sans-serif;
+  font-weight: 300;
+  font-size: 0.875rem;
+  line-height: 150%;
+  letter-spacing: 0%;
+}
+
+.testimonial-cards {
+  display: flex;
+  gap: 30px;
+}
+
+.testi-slider-button {
+  text-align: center;
+  margin-top: 20px;
+  /* margin-bottom: 40px; */
+}
+/* ----------------------------------- */
+
+/* FAQ */
+
+.faq {
+  display: grid;
+  grid-template-columns: 40% 60%;
+  margin-top: 60px;
+}
+
+@media (max-width: 768px) { 
+  .faq {
+    grid-template-columns: 1fr;
+  }
+}
+
+.faq-heading {
+  font-family: "RailLight", sans-serif;
+  font-weight: 300;
+  font-size: 2.5rem;
+  line-height: 100%;
+  margin-bottom: 20px;
+}
+
+.faq-para {
+  font-family: "RailLight", sans-serif;
+  font-weight: 300;
+  font-size: 1.25rem;
+  line-height: 150%;
+  letter-spacing: 0%;
+  margin-bottom: 20px;
+}
+
+.faq-button {
+  max-width: 200px;
+}
+
+.right-faq {
+  margin-left: 80px;
+  text-align: center;
+}
+
+.faqs {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 20px;
+}
+
+.faqs p {
+  font-family: "RailLight", sans-serif;
+  font-weight: 300;
+  font-size: 1.25rem;
+  line-height: 150%;
+  letter-spacing: 0%;
+}
+
+.right-faq hr {
+  margin: 20px 0px;
+}
+
+.all-faqs {
+  font-family: "RailLight", sans-serif;
+  font-weight: 300;
+  font-size: 1.125rem;
+  line-height: 150%;
+  letter-spacing: 0%;
+  text-align: center;
+}
+
+/* ----------------------------------- */
+
+/* Subscription section */
+
+.subscribe {
+  margin-top: 60px;
+}
+
+.image-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-wrapper img {
+  width: 100%;
+  display: block;
+  border-radius: 16.05px !important;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 16.05px !important;
+}
+
+.text-content {
+  position: absolute;
+  color: white;
+  text-align: center;
+}
+
+.text-content-heading {
+  font-family: "RailLight", sans-serif;
+  font-weight: 300;
+  font-size: 2.645rem;
+  line-height: 100%;
+  letter-spacing: 0px;
+  text-align: center;
+}
+
+.text-content-para {
+  font-family: "RailWhite", sans-serif;
+  font-weight: 300;
+  font-size: 1.323rem;
+  line-height: 150%;
+  letter-spacing: 0%;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.subscribe-input {
+  width: 538.23px;
+  height: 49.68px;
+  border: 1.7px solid #ffffff;
+  background: transparent;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.subs-button {
+  background: #ffffff;
+  padding: 12.14px 24.27px;
+  border-radius: 505.64px;
+  display: flex;
+  align-items: center;
+  gap: 66.34px;
+  cursor: pointer;
+  width: 229.4px;
+  height: 43.8px;
+  margin: 20px auto;
+}
+
+.subs-button button {
+  font-family: "RailLight", sans-serif;
+  font-size: 1.138rem;
+  line-height: 16.18px;
+  border: 0;
+  background: transparent;
+}
+
+.subs-button img {
+  width: 12.7px;
+}
+
+/* ----------------------------------- */
+
+/* Footer */
+
+.footer {
+  background-color: var(--bg-color-primayr);
+  padding: 40px 0px;
+  margin-top: 80px;
+}
+
+.footer-outer-grid {
+  display: grid;
+  grid-template-columns: 60% 40%;
+}
+
+@media (max-width: 768px) { 
+  .footer-outer-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.footer-first-text {
+  font-family: "RailLight";
+  font-weight: 700;
+  font-size: 1.011rem;
+  line-height: 150%;
+  letter-spacing: 0%;
+  color: #dea453;
+}
+
+.footer-input {
+  background: transparent;
+  border: 1.01px solid #ffffff;
+  color: #fff;
+  font-family: "Oxanium", sans-serif;
+  font-weight: 300;
+  font-size: 1.011rem;
+  line-height: 150%;
+  letter-spacing: 0%;
+  padding: 12.14px;
+  width: 365.07px;
+  gap: 8.09px;
+}
+
+.footer-input::placeholder {
+  color: #fff;
+  font-family: "Oxanium", sans-serif;
+  font-weight: 300;
+  font-size: 1.011rem;
+  line-height: 150%;
+  letter-spacing: 0%;
+}
+
+.footer-button {
+  background-color: #fff;
+  color: #dea453;
+  border: 0;
+  padding: 12.14px 24.27px;
+  font-family: "Oxanium", sans-serif;
+  font-weight: 300;
+  font-size: 1.011rem;
+  line-height: 150%;
+  letter-spacing: 0%;
+}
+
+.footer-second-text {
+  font-family: "Oxanium", sans-serif;
+  font-weight: 300;
+  font-size: 12.14px;
+  line-height: 150%;
+  letter-spacing: 0%;
+  color: #fff;
+  margin-top: 15px;
+}
+
+.footer-second-text span {
+  font-family: "Oxanium", sans-serif;
+  font-weight: 300;
+  font-size: 0.759rem;
+  line-height: 150%;
+  letter-spacing: 0%;
+  text-decoration: underline;
+  text-decoration-style: solid;
+  text-decoration-thickness: 0%;
+  color: #fff;
+}
+
+.footer-left-inner-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+@media (max-width: 768px) { 
+  .footer-left-inner-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.footer-item {
+  font-family: "Oxanium", sans-serif;
+  font-weight: 300;
+  font-size: 0.885rem;
+  line-height: 150%;
+  letter-spacing: 0%;
+  color: #fff;
+}
+
+.footer-item p {
+  margin-bottom: 20px;
+}
+
+.footer-icon {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.footer-icon p {
+  font-family: "Oxanium", sans-serif;
+  font-weight: 300;
+  font-size: 0.885rem;
+  line-height: 150%;
+  letter-spacing: 0%;
+  color: #fff;
+}
+
+.footer-icon-img {
+  height: 20.23px;
+  width: 20.23px;
+}
+
+.footer-logo {
+  margin-bottom: 40px;
+}
+
+.footer-credit {
+  font-family: "Oxanium", sans-serif;
+  font-weight: 300;
+  font-size: 1.011rem;
+  line-height: 120%;
+  letter-spacing: 0%;
+  vertical-align: bottom;
+  text-transform: uppercase;
+  color: #dea453;
+  margin: 30px 0px;
+}
+/* ----------------------------------- */
